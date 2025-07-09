@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baraa Aljouri</title>
+    <link rel="canonical" href="https://www.baraa.top/">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+    <div id="sectionIndicator" class="section-indicator">
+        <div class="section-dot" data-section="hero" title="Home"></div>
+        <div class="section-dot" data-section="skills" title="Skills"></div>
+        <div class="section-dot" data-section="resume" title="Resume"></div>
+        <div class="section-dot" data-section="contact" title="Contact"></div>
+    </div>
+
+    <!-- Animated Star Background -->
+    <div class="starfield" id="starfield">
+        <div class="stars stars-1"></div>
+        <div class="stars stars-2"></div>
+        <div class="stars stars-3"></div>
+        <div class="stars stars-4"></div>
+    </div>
+
+    <div class="floating-shapes">
+        <div class="shape" style="width: 200px; height: 200px; top: 8%; left: 8%; opacity: 0.10; filter: blur(8px);"></div>
+        <div class="shape" style="width: 140px; height: 140px; bottom: 18%; right: 12%; opacity: 0.13; filter: blur(10px);"></div>
+        <div class="shape" style="width: 110px; height: 110px; top: 55%; left: 60%; opacity: 0.12; filter: blur(6px);"></div>
+        <div class="shape" style="width: 90px; height: 90px; bottom: 10%; left: 35%; opacity: 0.11; filter: blur(7px);"></div>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <!-- Mouse Trail Canvas -->
+    <canvas id="mouseTrail" class="mouse-trail"></canvas>
+
+    <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main Navigation">
+            <button id="navToggle" class="hamburger" aria-label="Toggle navigation" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        <ul class="main-nav-list">
+            <li><a href="#hero" class="main-nav-link active" tabindex="0">Home</a></li>
+            <li><a href="#skills" class="main-nav-link" tabindex="0">Skills</a></li>
+            <li><a href="#resume" class="main-nav-link" tabindex="0">Resume</a></li>
+            <li><a href="#contact" class="main-nav-link" tabindex="0">Contact</a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+    </nav>
+
+    <main class="main-content">
+        <section class="section hero-section" id="hero" aria-labelledby="hero-title">
+            <div class="hero-center">
+                <div class="hero-badge">
+                    <span class="badge-text">Available for Work</span>
+                </div>
+                <h1 class="title" id="hero-title" style="color: #fff;">
+                    <span class="title-line"><i class="fas fa-hand-wave" aria-hidden="true"></i>Baraa Aljouri</span>
+                    <span class="title-line">Data Science & AI Graduate</span>
+                </h1>
+                <p class="subtitle" id="subtitle">
+                    <span class="typing-text">Data Analysis | Machine Learning | Computer Vision</span>
+                </p>
+                <div class="button-group" id="button-group">
+                    <a href="#contact" class="cta-button">
+                        <span>Contact Me</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="https://github.com/itsbaraa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/BaraaAljouri" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills" aria-labelledby="skills-title">
+            <div class="container">
+                <h2 class="section-title" id="skills-title" data-animation="fade-up"><i class="fas fa-tools" aria-hidden="true"></i> Skills</h2>
+                <div class="skills-grid" id="skills-grid">
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fab fa-python skill-icon"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fas fa-robot skill-icon"></i>
+                        <span>Machine Learning</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fas fa-eye skill-icon"></i>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fab fa-docker skill-icon"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fas fa-network-wired skill-icon"></i>
+                        <span>Networks</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fab fa-linux skill-icon"></i>
+                        <span>Linux</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fas fa-chart-bar skill-icon"></i>
+                        <span>Data Analysis</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fas fa-database skill-icon"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-item glass-effect" data-animation="scale-in">
+                        <i class="fab fa-github skill-icon"></i>
+                        <span>Github</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="section" id="resume" aria-labelledby="resume-title">
+            <div class="container">
+                <h2 class="section-title" id="resume-title" data-animation="fade-up">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i> Resume
+                </h2>
+                <div class="resume-timelines" data-animation="fade-up">
+                    <div class="timeline-column glass-effect">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <ul class="timeline">
+                            <li class="timeline-item">
+                                <span class="timeline-date">Jun 2022 – Aug 2025</span>
+                                <p>Bachelor in Data Science &amp; AI<br>Saudi Electronic University <br> GPA: 3.75 / 4.0</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="timeline-column glass-effect">
+                        <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                        <ul class="timeline">
+                            <li class="timeline-item">
+                                <span class="timeline-date">Jun 2025 – Aug 2025</span>
+                                <p>Full Stack Robotics Engineer Internship<br>Smart Methods</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:2rem;" data-animation="fade-up">
+                    <a href="resume.pdf" class="cta-button" target="_blank">
+                        <span>Download Resume</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 class="section-title" id="contact-title" data-animation="fade-up"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-info glass-effect" data-animation="fade-up">
+                        <h3>Get In Touch</h3>
+                        <p>I'm always interested in new opportunities and exciting projects, send me an email and I'll get back to you as soon as possible.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:BaraaAljouri@gmail.com">BaraaAljouri@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Location</h4>
+                                    <span>Makkah, Saudi Arabia</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Response Time</h4>
+                                    <span>Within 24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container glass-effect" data-animation="fade-up">
+                        <form class="contact-form" id="contactForm" action="submit.php" method="post">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- External Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
