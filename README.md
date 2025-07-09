@@ -3,7 +3,8 @@
 This is my personal portfolio website.
 
 ## Homepage
-![image](https://github.com/user-attachments/assets/e4b4fa62-cb55-4af7-bcb8-a9e5c4414fa2)
+![image](https://github.com/user-attachments/assets/c9453068-3ed9-4e83-bd86-7d70dc1a7e87)
+
 
 ## Features
 - Responsive, modern design
