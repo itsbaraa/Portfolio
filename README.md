@@ -2,6 +2,9 @@
 
 This is my personal portfolio website.
 
+## Homepage
+![image](https://github.com/user-attachments/assets/e4b4fa62-cb55-4af7-bcb8-a9e5c4414fa2)
+
 ## Features
 - Responsive, modern design
 - Animated hero, skills, and contact sections
