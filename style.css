@@ -1,14 +1,11 @@
-/* VARIABLES & THEME
--------------------------------------------------- */
+/* VARIABLES & THEME */
 :root {
-    /* Colors - Adjusted to be less purple, more blue-purple */
     --primary-color: #4f46e5;
     --secondary-color: #7c3aed;
     --accent-color: #06b6d4;
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     --gradient-text: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
 
-    /* Dark Theme Only */
     --bg-color: #0f0f23;
     --bg-gradient: linear-gradient(145deg, #0f0f23 0%, #1e1b4b 50%, #312e81 100%);
     --text-color: #f1f5f9;
@@ -17,14 +14,12 @@
     --card-border: rgba(255, 255, 255, 0.1);
     --nav-bg: rgba(15, 15, 35, 0.8);
 
-    /* Sizing & Spacing */
     --section-padding: 7rem 2rem;
     --container-width: 1280px;
 }
 
 
-/* GENERAL STYLES
--------------------------------------------------- */
+/* GENERAL STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -81,8 +76,7 @@ body::before {
 }
 
 
-/* UTILITIES & HELPERS
--------------------------------------------------- */
+/* UTILITIES & HELPERS */
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: #111; }
@@ -90,8 +84,7 @@ body::before {
 ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
 
 
-/* ANIMATED BACKGROUND
--------------------------------------------------- */
+/* ANIMATED BACKGROUND */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -284,9 +277,8 @@ body::before {
 }
 
 
-/* COMPONENTS
--------------------------------------------------- */
-/* --- Scroll Indicator --- */
+/* COMPONENTS */
+/* Scroll Indicator */
 .scroll-indicator { 
     position: fixed; 
     top: 0; 
@@ -305,7 +297,7 @@ body::before {
     transition: width 0.1s ease-out;
 }
 
-/* --- Mouse Trail --- */
+/*  Mouse Trail */
 .mouse-trail {
     position: fixed;
     top: 0;
@@ -316,7 +308,7 @@ body::before {
     z-index: 1;
 }
 
-/* --- Navigation --- */
+/* Navigation */
 .main-nav {
     position: fixed;
     top: 2rem;
@@ -415,7 +407,7 @@ body::before {
     }
 }
 
-/* --- Section --- */
+/* Section */
 .section {
     min-height: 100vh;
     display: flex;
@@ -477,7 +469,7 @@ body::before {
     50% { transform: translateY(-10px); }
 }
 
-/* --- Hero Badge --- */
+/* Hero Badge */
 .hero-badge {
     display: inline-block;
     margin-bottom: 2rem;
@@ -503,7 +495,7 @@ body::before {
     letter-spacing: 1px;
 }
 
-/* --- Enhanced Title --- */
+/* Enhanced Title */
 .title {
     font-size: 5rem;
     font-weight: 900;
@@ -549,7 +541,7 @@ body::before {
     100% { filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5)); }
 }
 
-/* --- Typing Animation --- */
+/* Typing Animation */
 .subtitle {
     font-size: 2rem;
     color: var(--text-muted);
@@ -623,11 +615,6 @@ body::before {
 .cta-button:hover { 
     transform: translateY(-4px) scale(1.05); 
     box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
-    animation: button-pulse 1s ease-in-out infinite;
-}
-
-.cta-button i {
-    transition: transform 0.3s ease;
 }
 
 .cta-button:hover i {
