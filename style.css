@@ -13,7 +13,6 @@
     --card-bg: rgba(30, 27, 75, 0.6);
     --card-border: rgba(255, 255, 255, 0.1);
     --nav-bg: rgba(15, 15, 35, 0.8);
-
     --section-padding: 7rem 2rem;
     --container-width: 1280px;
 }
@@ -1128,15 +1127,6 @@ body::before {
         transition: right 0.35s ease;
     }
     .main-nav-list.show { right: 0; }
-}
-
-/* Animation Classes - Removed conflicting CSS transitions */
-[data-animation] {
-    /* Initial states handled by anime.js */
-}
-
-[data-animation].visible {
-    /* Animation complete state */
 }
 
 /* Responsive Design */
