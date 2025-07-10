@@ -594,15 +594,6 @@ body::before {
     will-change: transform, box-shadow;
 }
 
-.cta-button.pressed,
-.cta-button:active,
-.cta-button.pressed:hover,
-.cta-button:active:hover {
-    /* Removed click scaling effect to keep button size stable on press */
-    transform: none !important;
-    box-shadow: 0 5px 20px rgba(79, 70, 229, 0.3) !important;
-    animation: none !important;
-}
 
 .cta-button { 
     background: var(--gradient-primary); 
@@ -612,12 +603,18 @@ body::before {
 }
 
 .cta-button:hover { 
-    transform: translateY(-4px) scale(1.05); 
+    transform: translateY(-4px); 
     box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
 }
 
 .cta-button:hover i {
     transform: translateX(5px);
+    transition: all 0.3s ease-in-out;
+}
+
+a[href="resume.pdf"].cta-button:hover i {
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
 }
 
 @keyframes button-pulse {
@@ -1294,4 +1291,98 @@ body::before {
     border-radius: 24px;
     will-change: transform, border-color, box-shadow;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-effect:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.25);
+    transform: translateY(-8px);
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-effect 0.6s linear;
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+[data-animation] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-animation].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-animation="scale-in"] {
+    transform: scale(0.9);
+}
+
+[data-animation="scale-in"].visible {
+    transform: scale(1);
+}
+
+[data-animation="fade-up"] {
+    transform: translateY(50px);
+}
+
+[data-animation="fade-up"].visible {
+    transform: translateY(0);
+}
+
+.field-error {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.notification-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.notification-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.notification-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
 }

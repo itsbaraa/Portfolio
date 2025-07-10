@@ -76,12 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            document.querySelectorAll('.cta-button, .secondary-button').forEach(button => {
-                button.addEventListener('mousedown', () => button.classList.add('pressed'));
-                button.addEventListener('mouseup', () => button.classList.remove('pressed'));
-                button.addEventListener('mouseleave', () => button.classList.remove('pressed'));
-                button.addEventListener('click', this.createRipple);
-            });
+            
 
             // Enhanced social link interactions (now part of button group)
             document.querySelectorAll('.social-link').forEach(link => {
@@ -125,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validation rules
             switch (field.type) {
                 case 'email':
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const emailRegex = /[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!value) {
                         isValid = false;
                         errorMessage = 'Email is required';
@@ -213,27 +208,40 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitButton.disabled = true;
 
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Reset form
-                form.reset();
-                inputs.forEach(input => this.clearFieldError(input));
-                
+            fetch('submit.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Reset form
+                    form.reset();
+                    inputs.forEach(input => this.clearFieldError(input));
+                    
+                    // Reset button
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                    
+                    // Show success message
+                    this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                    
+                    // Animate success
+                    anime({
+                        targets: submitButton,
+                        scale: [1, 1.1, 1],
+                        duration: 600,
+                        easing: 'easeInOutQuad'
+                    });
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                this.showNotification('There was an error sending your message. Please try again later.', 'error');
                 // Reset button
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
-                
-                // Show success message
-                this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-                
-                // Animate success
-                anime({
-                    targets: submitButton,
-                    scale: [1, 1.1, 1],
-                    duration: 600,
-                    easing: 'easeInOutQuad'
-                });
-            }, 2000);
+            });
         },
 
         showNotification(message, type = 'info') {
@@ -779,25 +787,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
        
-        createRipple(event) {
-            const button = event.currentTarget;
-            const ripple = document.createElement("span");
-            const rect = button.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = event.clientX - rect.left - size / 2;
-            const y = event.clientY - rect.top - size / 2;
-            
-            ripple.style.width = ripple.style.height = size + "px";
-            ripple.style.left = x + "px";
-            ripple.style.top = y + "px";
-            ripple.classList.add("ripple");
-            
-            button.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        }
+        
     };
 
     // Initialize the app
