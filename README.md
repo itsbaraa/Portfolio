@@ -18,7 +18,7 @@ This is my personal portfolio website, available at https://baraa.top/
 - **Reverse Proxy & Security (Bunkerweb)**  
   - Utilized [Bunkerweb](https://github.com/bunkerity/bunkerweb) as the reverse proxy to route requests within the local network.  
   - Leverages Bunkerweb’s state-of-the-art security features.
-  - Serves the website files using its built-in **[Nginx](https://nginx.org/) webserver**.
+  - Serves the website files using its built-in **Nginx webserver**.
 
 - **Backend (PHP-FPM)**  
   - Deployed a **PHP-FPM** container to handle the website’s **contact form**.
