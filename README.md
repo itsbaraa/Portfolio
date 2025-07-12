@@ -25,6 +25,6 @@ This is my personal portfolio website, available at https://baraa.top/
 
 - **Public Access & DDoS Protection (Cloudflare)**  
   - Used [Cloudflare](https://www.cloudflare.com/) to Proxy the server’s public IP.
-  - Protect against **DDoS attacks** on my homelab.
+  - Protect against DDoS attacks on my homelab.
 
 > *Note: You can choose any deployment method that suits your environment.*
