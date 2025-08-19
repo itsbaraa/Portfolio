@@ -27,4 +27,4 @@ This is my personal portfolio website, available at https://baraa.top/
   - Used [Cloudflare](https://www.cloudflare.com/) to Proxy the server’s public IP.
   - Protect against DDoS attacks on my homelab.
 
-> *Note: You can choose any deployment method that suits your environment.*
+> *Note: You can choose any deployment method.*
